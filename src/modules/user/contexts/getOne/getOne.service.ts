@@ -12,7 +12,7 @@ export class GetOneUserService {
     if(!findedUser) {
       throw new NotFoundException(notFound('user'));
     } else {  
-      return findedUser
+      return findedUser;
     }
   }
 }
