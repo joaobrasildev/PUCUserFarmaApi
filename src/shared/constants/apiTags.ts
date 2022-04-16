@@ -1,4 +1,5 @@
 export enum apiTags {
   USER = 'Users',
-  ROLE = 'Roles'
+  ROLE = 'Roles',
+  AUTH = 'Auth'
 }

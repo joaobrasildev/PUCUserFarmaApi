@@ -1,4 +1,5 @@
 import { Role } from '@shared/database/entities/role.entity';
+import { GetOneDTO } from '@shared/dtos/getOne.dto';
 import { CreateRoleDTO } from '@shared/dtos/role/createRole.dto';
 import { EntityRepository, Repository } from 'typeorm';
 
@@ -22,7 +23,7 @@ export class RoleRepository extends Repository<Role> {
     return await this.find();
   }
 
-  async deleteRole(id: string): Promise<void> {
+  async deleteRole(id: GetOneDTO): Promise<void> {
     this.delete(id);
   }
 }

@@ -3,6 +3,7 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  JoinColumn,
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -27,5 +28,5 @@ export class Role {
   public deletedAt: Date;
 
   @OneToMany(() => User, (user) => user.role_id)
-  public users: User[];
+  public users?: User[];
 }

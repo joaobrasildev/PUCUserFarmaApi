@@ -19,14 +19,15 @@ export class UserRepository extends Repository<User> {
   }
 
   async findAllUsers(): Promise<User[]> {
-    let users = await this.find();
+    let users = await this.find({ relations: ['role'] });
 
     return users.length ? users : [];
   }
 
   async findOneUser(id: string): Promise<User | undefined> {
     return await this.findOne(
-      { id }
+      { id },
+      { relations: ['role'] }
     );
   }
 

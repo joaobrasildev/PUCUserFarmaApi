@@ -98,7 +98,9 @@ export class User {
   @DeleteDateColumn({ name: 'deleted_at' })
   public deletedAt: Date;
 
-  @ManyToOne(() => Role, (role) => role.users)
+  @ManyToOne(() => Role, (role) => role.users, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'role_id' })
-  public role: Role;  
+  public role?: Role;  
 }
